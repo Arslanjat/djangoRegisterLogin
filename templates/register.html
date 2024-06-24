@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registeration</title>
+</head>
+
+<body>
+    <form action="register" method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">First Name</label>
+            <input type="input" class="form-control" name="first_name" id="exampleFormControlInput1"
+                placeholder="First Name">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">last Name</label>
+            <input type="input" class="form-control" name="last_name" id="exampleFormControlInput1"
+                placeholder="Last Name">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Username</label>
+            <input type="input" class="form-control" name="username" id="exampleFormControlInput1"
+                placeholder="username">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email</label>
+            <input type="email" class="form-control" name="email" id="exampleFormControlInput1"
+                placeholder="Email">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Password</label>
+            <input type="password" class="form-control" name="password1" id="exampleFormControlInput1"
+                placeholder="Passwrod">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" name="password2" id="exampleFormControlInput1"
+                placeholder="Confirm Password">
+        </div>
+        <input type="Submit">
+
+    </form>
+    <div>
+        {% for message in messages %}
+            
+        <h3>{{message}}</h3>
+        
+        {% endfor %}
+    </div>
+</body>
+
+</html>
